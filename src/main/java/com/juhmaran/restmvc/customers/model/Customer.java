@@ -20,6 +20,7 @@ public class Customer {
   private Integer version;
 
   private String name;
+  private String email;
 
   private LocalDateTime createdDate;
   private LocalDateTime updateDate;
