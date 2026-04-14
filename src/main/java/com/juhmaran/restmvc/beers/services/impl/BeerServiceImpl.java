@@ -74,9 +74,9 @@ public class BeerServiceImpl implements BeerService {
   }
 
   @Override
-  public Beer getBeerById(UUID beerId) {
+  public Optional<Beer> getBeerById(UUID beerId) {
     log.debug("Get Beer by ID: {} - in service", beerId);
-    return beerMap.get(beerId);
+    return Optional.ofNullable(beerMap.get(beerId));
   }
 
   @Override

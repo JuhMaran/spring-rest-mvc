@@ -1,5 +1,6 @@
 package com.juhmaran.restmvc.beers.controller;
 
+import br.com.juhmaran.exception.runtimes.ResourceNotFoundException;
 import com.juhmaran.restmvc.beers.model.Beer;
 import com.juhmaran.restmvc.beers.services.BeerService;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +35,8 @@ public class BeerController {
   @RequestMapping(value = "{beerId}", method = RequestMethod.GET)
   public Beer getBeerById(@PathVariable UUID beerId) {
     log.debug("Getting beer by id {} - in controller", beerId);
-    return beerService.getBeerById(beerId);
+    return beerService.getBeerById(beerId)
+      .orElseThrow(() -> new ResourceNotFoundException("Beer ID not found."));
   }
 
   @PostMapping

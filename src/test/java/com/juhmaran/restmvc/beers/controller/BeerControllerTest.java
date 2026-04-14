@@ -19,6 +19,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -82,8 +83,7 @@ class BeerControllerTest {
   void shouldReturnBeerById() throws Exception {
     Beer testBeer = beerServiceImpl.listBeers().getFirst();
 
-    given(beerService.getBeerById(testBeer.getId()))
-      .willReturn(testBeer);
+    given(beerService.getBeerById(testBeer.getId())).willReturn(Optional.of(testBeer));
 
     mockMvc.perform(get(BEER_PATH_ID, testBeer.getId())
         .accept(MediaType.APPLICATION_JSON))
