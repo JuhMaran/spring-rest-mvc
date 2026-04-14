@@ -1,7 +1,7 @@
 package com.juhmaran.restmvc.beers.services.impl;
 
 import com.juhmaran.restmvc.beers.model.BeerDTO;
-import com.juhmaran.restmvc.beers.model.BeerStyle;
+import com.juhmaran.restmvc.beers.model.enums.BeerStyle;
 import com.juhmaran.restmvc.beers.services.BeerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

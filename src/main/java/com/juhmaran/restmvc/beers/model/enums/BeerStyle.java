@@ -1,4 +1,4 @@
-package com.juhmaran.restmvc.beers.model;
+package com.juhmaran.restmvc.beers.model.enums;
 
 /**
  * spring-rest-mvc

@@ -1,5 +1,6 @@
 package com.juhmaran.restmvc.beers.model;
 
+import com.juhmaran.restmvc.beers.model.enums.BeerStyle;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

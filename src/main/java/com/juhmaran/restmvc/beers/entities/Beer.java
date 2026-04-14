@@ -1,6 +1,6 @@
 package com.juhmaran.restmvc.beers.entities;
 
-import com.juhmaran.restmvc.beers.model.BeerStyle;
+import com.juhmaran.restmvc.beers.model.enums.BeerStyle;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
