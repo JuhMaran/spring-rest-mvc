@@ -4,7 +4,6 @@ import com.juhmaran.restmvc.customers.model.Customer;
 import com.juhmaran.restmvc.customers.services.CustomerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -89,20 +88,6 @@ public class CustomerServiceImpl implements CustomerService {
   @Override
   public void deleteCustomerById(UUID customerId) {
     customerMap.remove(customerId);
-  }
-
-  @Override
-  public void patchCustomerById(UUID customerId, Customer customer) {
-    Customer existingCustomer = customerMap.get(customerId);
-
-    if (StringUtils.hasText(existingCustomer.getName())) {
-      existingCustomer.setName(existingCustomer.getName());
-    }
-
-    if (StringUtils.hasText(existingCustomer.getEmail())) {
-      existingCustomer.setEmail(existingCustomer.getEmail());
-    }
-
   }
 
 }
