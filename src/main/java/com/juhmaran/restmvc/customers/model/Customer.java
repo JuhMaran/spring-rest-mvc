@@ -1,5 +1,6 @@
 package com.juhmaran.restmvc.customers.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,12 +15,14 @@ import java.util.UUID;
  */
 @Data
 @Builder
+@AllArgsConstructor
 public class Customer {
 
   private UUID id;
   private Integer version;
 
   private String name;
+  private String email;
 
   private LocalDateTime createdDate;
   private LocalDateTime updateDate;
