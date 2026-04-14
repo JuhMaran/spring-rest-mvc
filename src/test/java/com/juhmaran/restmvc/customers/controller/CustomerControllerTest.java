@@ -1,6 +1,6 @@
 package com.juhmaran.restmvc.customers.controller;
 
-import com.juhmaran.restmvc.customers.model.Customer;
+import com.juhmaran.restmvc.customers.model.CustomerDTO;
 import com.juhmaran.restmvc.customers.services.CustomerService;
 import com.juhmaran.restmvc.customers.services.impl.CustomerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +17,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import tools.jackson.databind.ObjectMapper;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -75,33 +73,33 @@ class CustomerControllerTest {
   @Test
   @DisplayName("Should return customer by ID")
   void shouldReturnCustomerById() throws Exception {
-    Customer customer = customerServiceImpl.listCustomers().getFirst();
+    CustomerDTO customerDTO = customerServiceImpl.listCustomers().getFirst();
 
-    given(customerService.getCustomerById(customer.getId()))
-      .willReturn(customer);
+    given(customerService.getCustomerById(customerDTO.getId()))
+      .willReturn(customerDTO);
 
-    mockMvc.perform(get(CUSTOMER_PATH_ID, customer.getId())
+    mockMvc.perform(get(CUSTOMER_PATH_ID, customerDTO.getId())
         .accept(MediaType.APPLICATION_JSON))
       .andExpect(status().isOk())
       .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-      .andExpect(jsonPath("$.id", is(customer.getId().toString())))
-      .andExpect(jsonPath("$.name", is(customer.getName())));
+      .andExpect(jsonPath("$.id", is(customerDTO.getId().toString())))
+      .andExpect(jsonPath("$.name", is(customerDTO.getName())));
   }
 
   @Test
   @DisplayName("Should create a new customer and return 201 with Location  header")
   void shouldCreateNewCustomer() throws Exception {
-    Customer customer = customerServiceImpl.listCustomers().getFirst();
-    customer.setId(null);
-    customer.setVersion(null);
+    CustomerDTO customerDTO = customerServiceImpl.listCustomers().getFirst();
+    customerDTO.setId(null);
+    customerDTO.setVersion(null);
 
-    given(customerService.saveNewCustomer(any(Customer.class)))
+    given(customerService.saveNewCustomer(any(CustomerDTO.class)))
       .willReturn(customerServiceImpl.listCustomers().get(1));
 
     mockMvc.perform(post(CUSTOMER_PATH)
         .accept(MediaType.APPLICATION_JSON)
         .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(customer)))
+        .content(objectMapper.writeValueAsString(customerDTO)))
       .andExpect(status().isCreated())
       .andExpect(header().exists("Location"));
   }
@@ -109,28 +107,28 @@ class CustomerControllerTest {
   @Test
   @DisplayName("Should update customer completely and return 204")
   void shouldUpdateCustomer() throws Exception {
-    Customer customer = customerServiceImpl.listCustomers().getFirst();
+    CustomerDTO customerDTO = customerServiceImpl.listCustomers().getFirst();
 
-    mockMvc.perform(put(CUSTOMER_PATH_ID, customer.getId())
+    mockMvc.perform(put(CUSTOMER_PATH_ID, customerDTO.getId())
         .accept(MediaType.APPLICATION_JSON)
         .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(customer)))
+        .content(objectMapper.writeValueAsString(customerDTO)))
       .andExpect(status().isNoContent());
 
-    verify(customerService).updateCustomerById(any(UUID.class), any(Customer.class));
+    verify(customerService).updateCustomerById(any(UUID.class), any(CustomerDTO.class));
   }
 
   @Test
   @DisplayName("Should delete customer by id and return 204")
   void shouldDeleteCustomer() throws Exception {
-    Customer customer = customerServiceImpl.listCustomers().getFirst();
+    CustomerDTO customerDTO = customerServiceImpl.listCustomers().getFirst();
 
-    mockMvc.perform(delete(CUSTOMER_PATH_ID, customer.getId())
+    mockMvc.perform(delete(CUSTOMER_PATH_ID, customerDTO.getId())
         .accept(MediaType.APPLICATION_JSON))
       .andExpect(status().isNoContent());
 
     verify(customerService).deleteCustomerById(uuidArgumentCaptor.capture());
-    assertThat(customer.getId()).isEqualTo(uuidArgumentCaptor.getValue());
+    assertThat(customerDTO.getId()).isEqualTo(uuidArgumentCaptor.getValue());
   }
 
 }
