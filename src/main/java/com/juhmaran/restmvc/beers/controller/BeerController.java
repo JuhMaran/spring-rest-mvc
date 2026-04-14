@@ -1,8 +1,8 @@
 package com.juhmaran.restmvc.beers.controller;
 
-import br.com.juhmaran.exception.runtimes.ResourceNotFoundException;
 import com.juhmaran.restmvc.beers.model.BeerDTO;
 import com.juhmaran.restmvc.beers.services.BeerService;
+import com.juhmaran.restmvc.exception.BreweryNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -27,16 +27,16 @@ public class BeerController {
 
   private final BeerService beerService;
 
-  @RequestMapping(method = RequestMethod.GET)
+  @GetMapping
   public List<BeerDTO> listBeers() {
     return beerService.listBeers();
   }
 
-  @RequestMapping(value = "{beerId}", method = RequestMethod.GET)
-  public BeerDTO getBeerById(@PathVariable UUID beerId) {
+  @GetMapping("/{beerId}")
+  public BeerDTO getBeerById(@PathVariable("beerId") UUID beerId) {
     log.debug("Getting beer by id {} - in controller", beerId);
     return beerService.getBeerById(beerId)
-      .orElseThrow(() -> new ResourceNotFoundException("Beer ID not found."));
+      .orElseThrow(BreweryNotFoundException::new);
   }
 
   @PostMapping
