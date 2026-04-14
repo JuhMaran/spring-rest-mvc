@@ -1,0 +1,972 @@
+{
+  "info": {
+    "_postman_id": "c6a4d4ea-cb07-482e-931c-33239a0a8b5c",
+    "name": "Spring REST MVC",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13771815",
+    "_collection_link": "https://go.postman.co/collection/13771815-c6a4d4ea-cb07-482e-931c-33239a0a8b5c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "beer",
+              "item": [
+                {
+                  "name": "{beerId}",
+                  "item": [
+                    {
+                      "name": "Get Beer By ID",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "beer",
+                            ":beerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "beerId",
+                              "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "Get Beer By ID",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "beer",
+                                ":beerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "beerId",
+                                  "value": "4f90e983-a2b4-4668-bc9a-57acc68daed8"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json",
+                              "description": "",
+                              "type": "text"
+                            },
+                            {
+                              "key": "Content-Length",
+                              "value": "238"
+                            },
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 12:47:10 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [
+                            {
+                              "expires": "Invalid Date",
+                              "domain": "",
+                              "path": ""
+                            }
+                          ],
+                          "body": "{\n    \"beerName\": \"Crank\",\n    \"beerStyle\": \"PALE_ALE\",\n    \"createdDate\": \"2026-04-14T09:46:28.0611389\",\n    \"id\": \"4f90e983-a2b4-4668-bc9a-57acc68daed8\",\n    \"price\": 11.99,\n    \"quantityOnHand\": 392,\n    \"upc\": \"12356222\",\n    \"updateDate\": \"2026-04-14T09:46:28.0611389\",\n    \"version\": 1\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update Beer By ID",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"beerName\": \"Atualiza Cerveja\",\r\n    \"beerStyle\": \"PALE_ALE\",\r\n    \"price\": 11.99,\r\n    \"quantityOnHand\": 392,\r\n    \"upc\": \"12356222\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "beer",
+                            ":beerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "beerId",
+                              "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "204 No Content",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\r\n    \"beerName\": \"Atualiza Cerveja\",\r\n    \"beerStyle\": \"PALE_ALE\",\r\n    \"price\": 11.99,\r\n    \"quantityOnHand\": 392,\r\n    \"upc\": \"12356222\"\r\n}",
+                              "options": {
+                                "raw": {
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "beer",
+                                ":beerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "beerId",
+                                  "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": null,
+                          "header": [
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 12:55:49 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": null
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update Beer Patch By ID",
+                      "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"beerName\": \"Atualização parcial da Cerveja\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "beer",
+                            ":beerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "beerId",
+                              "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "204 No Content",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\r\n    \"beerName\": \"Atualização parcial da Cerveja\"\r\n}",
+                              "options": {
+                                "raw": {
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "beer",
+                                ":beerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "beerId",
+                                  "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "",
+                          "header": [
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 12:57:44 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [
+                            {
+                              "expires": "Invalid Date",
+                              "domain": "",
+                              "path": ""
+                            }
+                          ],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Delete Beer By ID",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "beer",
+                            ":beerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "beerId",
+                              "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "204 No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/beer/:beerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "beer",
+                                ":beerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "beerId",
+                                  "value": "e2ea38c7-8a25-49e6-b392-4c141c63aaa4"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "",
+                          "header": [
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 12:58:30 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [
+                            {
+                              "expires": "Invalid Date",
+                              "domain": "",
+                              "path": ""
+                            }
+                          ],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "List Beers",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/beer",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "beer"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "200 OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/beer",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "beer"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json",
+                          "description": "",
+                          "type": "text"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "720"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Tue, 14 Apr 2026 12:46:40 GMT"
+                        },
+                        {
+                          "key": "Keep-Alive",
+                          "value": "timeout=60"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n    {\n        \"beerName\": \"Sunshine City\",\n        \"beerStyle\": \"IPA\",\n        \"createdDate\": \"2026-04-14T09:46:28.0611389\",\n        \"id\": \"a5a143fe-44fa-4e9b-9f0d-c8b1e3229873\",\n        \"price\": 13.99,\n        \"quantityOnHand\": 144,\n        \"upc\": \"12356\",\n        \"updateDate\": \"2026-04-14T09:46:28.0611389\",\n        \"version\": 1\n    },\n    {\n        \"beerName\": \"Galaxy Cat\",\n        \"beerStyle\": \"PALE_ALE\",\n        \"createdDate\": \"2026-04-14T09:46:28.0601394\",\n        \"id\": \"1c66f8e0-7a5d-4a75-ae0f-eb67d864bedb\",\n        \"price\": 12.99,\n        \"quantityOnHand\": 122,\n        \"upc\": \"12356\",\n        \"updateDate\": \"2026-04-14T09:46:28.0601394\",\n        \"version\": 1\n    },\n    {\n        \"beerName\": \"Crank\",\n        \"beerStyle\": \"PALE_ALE\",\n        \"createdDate\": \"2026-04-14T09:46:28.0611389\",\n        \"id\": \"4f90e983-a2b4-4668-bc9a-57acc68daed8\",\n        \"price\": 11.99,\n        \"quantityOnHand\": 392,\n        \"upc\": \"12356222\",\n        \"updateDate\": \"2026-04-14T09:46:28.0611389\",\n        \"version\": 1\n    }\n]"
+                    }
+                  ]
+                },
+                {
+                  "name": "Save New Beer",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"beerName\": \"Nova Cerveja\",\r\n    \"beerStyle\": \"PALE_ALE\",\r\n    \"price\": 11.99,\r\n    \"quantityOnHand\": 392,\r\n    \"upc\": \"12356222\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/beer",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "beer"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "201 Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"beerName\": \"Nova Cerveja\",\r\n    \"beerStyle\": \"PALE_ALE\",\r\n    \"price\": 11.99,\r\n    \"quantityOnHand\": 392,\r\n    \"upc\": \"12356222\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/beer",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "beer"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Location",
+                          "value": "/api/v1/beer/93f08e11-31c7-4de4-9708-ef0b8b3eabf3"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Tue, 14 Apr 2026 12:50:01 GMT"
+                        },
+                        {
+                          "key": "Keep-Alive",
+                          "value": "timeout=60"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "customer",
+              "item": [
+                {
+                  "name": "{customerId}",
+                  "item": [
+                    {
+                      "name": "Get Customer By ID",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/customer/:customerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "customer",
+                            ":customerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "customerId",
+                              "value": "0253ff76-5137-403d-a30b-3376d93e160a"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "200 OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/customer/:customerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "customer",
+                                ":customerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "customerId",
+                                  "value": "0253ff76-5137-403d-a30b-3376d93e160a"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json",
+                              "description": "",
+                              "type": "text"
+                            },
+                            {
+                              "key": "Content-Length",
+                              "value": "196"
+                            },
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 13:19:58 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n    \"id\": \"0253ff76-5137-403d-a30b-3376d93e160a\",\n    \"version\": 1,\n    \"name\": \"Customer 4\",\n    \"email\": \"customer4@example.com\",\n    \"createdDate\": \"2026-04-14T10:19:14.1102631\",\n    \"updateDate\": \"2026-04-14T10:19:14.1102631\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update Customer By ID",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"Atualiza Informações do Cliente\",\r\n    \"email\": \"customer4@example.com\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/customer/:customerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "customer",
+                            ":customerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "customerId",
+                              "value": "0253ff76-5137-403d-a30b-3376d93e160a"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "204 No Content",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\r\n    \"name\": \"Atualiza Informações do Cliente\",\r\n    \"email\": \"customer4@example.com\"\r\n}",
+                              "options": {
+                                "raw": {
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/customer/:customerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "customer",
+                                ":customerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "customerId",
+                                  "value": "0253ff76-5137-403d-a30b-3376d93e160a"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "",
+                          "header": [
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 13:20:36 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [
+                            {
+                              "expires": "Invalid Date",
+                              "domain": "",
+                              "path": ""
+                            }
+                          ],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Delete Customer By ID",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/customer/:customerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "customer",
+                            ":customerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "customerId",
+                              "value": "0253ff76-5137-403d-a30b-3376d93e160a"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "204 No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/customer/:customerId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "customer",
+                                ":customerId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "customerId",
+                                  "value": "0253ff76-5137-403d-a30b-3376d93e160a"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "",
+                          "header": [
+                            {
+                              "key": "Date",
+                              "value": "Tue, 14 Apr 2026 13:22:50 GMT"
+                            },
+                            {
+                              "key": "Keep-Alive",
+                              "value": "timeout=60"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            }
+                          ],
+                          "cookie": [
+                            {
+                              "expires": "Invalid Date",
+                              "domain": "",
+                              "path": ""
+                            }
+                          ],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "List Customers",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/customer",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "customer"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "200 OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/customer",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "customer"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json",
+                          "description": "",
+                          "type": "text"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "592"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Tue, 14 Apr 2026 13:18:51 GMT"
+                        },
+                        {
+                          "key": "Keep-Alive",
+                          "value": "timeout=60"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n    {\n        \"id\": \"2b04c46c-37ee-4f8f-8d78-552faabd4311\",\n        \"version\": 1,\n        \"name\": \"Customer 2\",\n        \"email\": \"customer2@example.com\",\n        \"createdDate\": \"2026-04-14T10:18:40.0647212\",\n        \"updateDate\": \"2026-04-14T10:18:40.0647212\"\n    },\n    {\n        \"id\": \"2d1ded27-c73c-44f6-ac96-7ab8fa730b07\",\n        \"version\": 1,\n        \"name\": \"Customer 1\",\n        \"email\": \"customer1@example.com\",\n        \"createdDate\": \"2026-04-14T10:18:40.0647212\",\n        \"updateDate\": \"2026-04-14T10:18:40.0647212\"\n    },\n    {\n        \"id\": \"d5a0d31b-772e-4a58-857f-a3b9f9f0d7d0\",\n        \"version\": 1,\n        \"name\": \"Customer 3\",\n        \"email\": \"customer3@example.com\",\n        \"createdDate\": \"2026-04-14T10:18:40.0657246\",\n        \"updateDate\": \"2026-04-14T10:18:40.0657246\"\n    }\n]"
+                    }
+                  ]
+                },
+                {
+                  "name": "Save New Customer",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"name\": \"Customer 4\",\r\n    \"email\": \"customer4@example.com\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/customer",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "customer"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "201 Created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"Customer 4\",\r\n    \"email\": \"customer4@example.com\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/customer",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "customer"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Location",
+                          "value": "/api/v1/customer/0253ff76-5137-403d-a30b-3376d93e160a"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Tue, 14 Apr 2026 13:19:14 GMT"
+                        },
+                        {
+                          "key": "Keep-Alive",
+                          "value": "timeout=60"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": null
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
