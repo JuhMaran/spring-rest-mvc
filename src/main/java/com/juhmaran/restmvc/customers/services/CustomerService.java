@@ -1,6 +1,6 @@
 package com.juhmaran.restmvc.customers.services;
 
-import com.juhmaran.restmvc.customers.model.Customer;
+import com.juhmaran.restmvc.customers.model.CustomerDTO;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,13 +13,13 @@ import java.util.UUID;
  */
 public interface CustomerService {
 
-  List<Customer> listCustomers();
+  List<CustomerDTO> listCustomers();
 
-  Customer getCustomerById(UUID customerId);
+  CustomerDTO getCustomerById(UUID customerId);
 
-  Customer saveNewCustomer(Customer customer);
+  CustomerDTO saveNewCustomer(CustomerDTO customerDTO);
 
-  void updateCustomerById(UUID customerId, Customer customer);
+  void updateCustomerById(UUID customerId, CustomerDTO customerDTO);
 
   void deleteCustomerById(UUID customerId);
 

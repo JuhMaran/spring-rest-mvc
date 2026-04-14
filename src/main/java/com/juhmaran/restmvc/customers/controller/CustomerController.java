@@ -1,6 +1,6 @@
 package com.juhmaran.restmvc.customers.controller;
 
-import com.juhmaran.restmvc.customers.model.Customer;
+import com.juhmaran.restmvc.customers.model.CustomerDTO;
 import com.juhmaran.restmvc.customers.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,30 +27,30 @@ public class CustomerController {
   private final CustomerService customerService;
 
   @GetMapping
-  public List<Customer> getAllCustomers() {
+  public List<CustomerDTO> getAllCustomers() {
     return customerService.listCustomers();
   }
 
   @GetMapping("/{customerId}")
-  public Customer getCustomerById(@PathVariable("customerId") UUID customerId) {
+  public CustomerDTO getCustomerById(@PathVariable("customerId") UUID customerId) {
     log.debug("Getting customer by id {} - in controller", customerId);
     return customerService.getCustomerById(customerId);
   }
 
   @PostMapping
-  public ResponseEntity handlePost(@RequestBody Customer customer) {
-    Customer savedCustomer = customerService.saveNewCustomer(customer);
+  public ResponseEntity handlePost(@RequestBody CustomerDTO customerDTO) {
+    CustomerDTO savedCustomerDTO = customerService.saveNewCustomer(customerDTO);
 
     HttpHeaders headers = new HttpHeaders();
-    headers.add("Location", "/api/v1/customer/" + savedCustomer.getId().toString());
+    headers.add("Location", "/api/v1/customer/" + savedCustomerDTO.getId().toString());
 
     return new ResponseEntity(headers, HttpStatus.CREATED);
   }
 
   @PutMapping("/{customerId}")
   public ResponseEntity updateCustomerById(@PathVariable("customerId") UUID customerId,
-                                           @RequestBody Customer customer) {
-    customerService.updateCustomerById(customerId, customer);
+                                           @RequestBody CustomerDTO customerDTO) {
+    customerService.updateCustomerById(customerId, customerDTO);
     return new ResponseEntity(HttpStatus.NO_CONTENT);
   }
 
