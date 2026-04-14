@@ -1,4 +1,4 @@
-package com.juhmaran.restmvc.beers;
+package com.juhmaran.restmvc.beers.model;
 
 /**
  * spring-rest-mvc
