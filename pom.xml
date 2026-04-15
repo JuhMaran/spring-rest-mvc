@@ -83,6 +83,7 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+			<version>${lombok.version}</version>
 		</dependency>
 		<!-- Custom Exception Library -->
 		<dependency>
@@ -137,6 +138,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
 						</path>
 						<!-- Integração Lombok + MapStruct -->
 						<path>
