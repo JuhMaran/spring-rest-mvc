@@ -1,7 +1,7 @@
 package com.juhmaran.restmvc.beers.services.impl;
 
 import com.juhmaran.restmvc.beers.model.BeerDTO;
-import com.juhmaran.restmvc.beers.model.BeerStyle;
+import com.juhmaran.restmvc.beers.model.enums.BeerStyle;
 import com.juhmaran.restmvc.beers.services.BeerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -97,22 +97,24 @@ public class BeerServiceImpl implements BeerService {
   }
 
   @Override
-  public void updateBeerById(UUID beerId, BeerDTO beerDTO) {
+  public Optional<BeerDTO> updateBeerById(UUID beerId, BeerDTO beerDTO) {
     BeerDTO existing = beerMap.get(beerId);
     existing.setBeerName(beerDTO.getBeerName());
     existing.setBeerStyle(beerDTO.getBeerStyle());
     existing.setUpc(beerDTO.getUpc());
     existing.setQuantityOnHand(beerDTO.getQuantityOnHand());
     existing.setPrice(beerDTO.getPrice());
+    return Optional.of(existing);
   }
 
   @Override
-  public void deleteBeerById(UUID beerId) {
+  public Boolean deleteBeerById(UUID beerId) {
     beerMap.remove(beerId);
+    return true;
   }
 
   @Override
-  public void patchBeerById(UUID beerId, BeerDTO beerDTO) {
+  public Optional<BeerDTO> patchBeerById(UUID beerId, BeerDTO beerDTO) {
     BeerDTO existing = beerMap.get(beerId);
 
     if (StringUtils.hasText(beerDTO.getBeerName())) {
@@ -134,6 +136,8 @@ public class BeerServiceImpl implements BeerService {
     if (beerDTO.getPrice() != null) {
       existing.setPrice(beerDTO.getPrice());
     }
+
+    return Optional.of(existing);
 
   }
 
