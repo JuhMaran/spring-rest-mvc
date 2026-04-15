@@ -1,7 +1,7 @@
-package com.juhmaran.restmvc.customers.services.impl;
+package com.juhmaran.restmvc.services.impl;
 
-import com.juhmaran.restmvc.customers.model.CustomerDTO;
-import com.juhmaran.restmvc.customers.services.CustomerService;
+import com.juhmaran.restmvc.model.CustomerDTO;
+import com.juhmaran.restmvc.services.CustomerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

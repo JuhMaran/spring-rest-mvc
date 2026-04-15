@@ -1,6 +1,6 @@
-package com.juhmaran.restmvc.customers.repositories;
+package com.juhmaran.restmvc.repositories;
 
-import com.juhmaran.restmvc.customers.entities.Customer;
+import com.juhmaran.restmvc.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

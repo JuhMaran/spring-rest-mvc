@@ -1,7 +1,7 @@
-package com.juhmaran.restmvc.customers.mappers;
+package com.juhmaran.restmvc.mappers;
 
-import com.juhmaran.restmvc.customers.entities.Customer;
-import com.juhmaran.restmvc.customers.model.CustomerDTO;
+import com.juhmaran.restmvc.entities.Customer;
+import com.juhmaran.restmvc.model.CustomerDTO;
 import org.mapstruct.Mapper;
 
 /**

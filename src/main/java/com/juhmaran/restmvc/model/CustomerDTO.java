@@ -1,4 +1,4 @@
-package com.juhmaran.restmvc.customers.model;
+package com.juhmaran.restmvc.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

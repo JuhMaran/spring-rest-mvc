@@ -1,8 +1,9 @@
-package com.juhmaran.restmvc.beers.controller;
+package com.juhmaran.restmvc.controller;
 
-import com.juhmaran.restmvc.beers.model.BeerDTO;
-import com.juhmaran.restmvc.beers.services.BeerService;
-import com.juhmaran.restmvc.beers.services.impl.BeerServiceImpl;
+import com.juhmaran.restmvc.controller.BeerController;
+import com.juhmaran.restmvc.model.BeerDTO;
+import com.juhmaran.restmvc.services.BeerService;
+import com.juhmaran.restmvc.services.impl.BeerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

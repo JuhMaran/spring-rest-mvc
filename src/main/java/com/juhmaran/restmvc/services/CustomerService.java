@@ -1,6 +1,6 @@
-package com.juhmaran.restmvc.customers.services;
+package com.juhmaran.restmvc.services;
 
-import com.juhmaran.restmvc.customers.model.CustomerDTO;
+import com.juhmaran.restmvc.model.CustomerDTO;
 
 import java.util.List;
 import java.util.UUID;
