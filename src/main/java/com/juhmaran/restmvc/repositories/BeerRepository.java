@@ -1,6 +1,6 @@
-package com.juhmaran.restmvc.beers.repositories;
+package com.juhmaran.restmvc.repositories;
 
-import com.juhmaran.restmvc.beers.entities.Beer;
+import com.juhmaran.restmvc.entities.Beer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

@@ -1,7 +1,7 @@
-package com.juhmaran.restmvc.customers.controller;
+package com.juhmaran.restmvc.controller;
 
-import com.juhmaran.restmvc.customers.model.CustomerDTO;
-import com.juhmaran.restmvc.customers.services.CustomerService;
+import com.juhmaran.restmvc.model.CustomerDTO;
+import com.juhmaran.restmvc.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;

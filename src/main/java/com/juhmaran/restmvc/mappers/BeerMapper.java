@@ -1,7 +1,7 @@
-package com.juhmaran.restmvc.beers.mappers;
+package com.juhmaran.restmvc.mappers;
 
-import com.juhmaran.restmvc.beers.entities.Beer;
-import com.juhmaran.restmvc.beers.model.BeerDTO;
+import com.juhmaran.restmvc.entities.Beer;
+import com.juhmaran.restmvc.model.BeerDTO;
 import org.mapstruct.Mapper;
 
 /**

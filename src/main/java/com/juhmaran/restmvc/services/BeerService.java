@@ -1,6 +1,6 @@
-package com.juhmaran.restmvc.beers.services;
+package com.juhmaran.restmvc.services;
 
-import com.juhmaran.restmvc.beers.model.BeerDTO;
+import com.juhmaran.restmvc.model.BeerDTO;
 
 import java.util.List;
 import java.util.Optional;

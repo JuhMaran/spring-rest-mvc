@@ -1,8 +1,8 @@
-package com.juhmaran.restmvc.customers.controller;
+package com.juhmaran.restmvc.controller;
 
-import com.juhmaran.restmvc.customers.model.CustomerDTO;
-import com.juhmaran.restmvc.customers.services.CustomerService;
-import com.juhmaran.restmvc.customers.services.impl.CustomerServiceImpl;
+import com.juhmaran.restmvc.model.CustomerDTO;
+import com.juhmaran.restmvc.services.CustomerService;
+import com.juhmaran.restmvc.services.impl.CustomerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

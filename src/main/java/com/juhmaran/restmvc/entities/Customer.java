@@ -1,11 +1,9 @@
-package com.juhmaran.restmvc.beers.entities;
+package com.juhmaran.restmvc.entities;
 
-import com.juhmaran.restmvc.beers.model.enums.BeerStyle;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -21,7 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Beer {
+public class Customer {
 
   @Id
   @UuidGenerator
@@ -32,11 +30,8 @@ public class Beer {
   @Version
   private Integer version;
 
-  private String beerName;
-  private BeerStyle beerStyle;
-  private String upc;
-  private Integer quantityOnHand;
-  private BigDecimal price;
+  private String name;
+  private String email;
 
   private LocalDateTime createdDate;
   private LocalDateTime updateDate;

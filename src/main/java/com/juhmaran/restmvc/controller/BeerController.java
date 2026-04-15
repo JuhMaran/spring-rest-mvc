@@ -1,7 +1,7 @@
-package com.juhmaran.restmvc.beers.controller;
+package com.juhmaran.restmvc.controller;
 
-import com.juhmaran.restmvc.beers.model.BeerDTO;
-import com.juhmaran.restmvc.beers.services.BeerService;
+import com.juhmaran.restmvc.model.BeerDTO;
+import com.juhmaran.restmvc.services.BeerService;
 import com.juhmaran.restmvc.exception.BreweryNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
